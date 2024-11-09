@@ -1,5 +1,5 @@
 """
-URL configuration for django19 project.
+URL configuration for UrbanDjango project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,7 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
+from task1.views import main, shop, shopping_cart, sign_up_by_django
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', main, name='main'),
+    path('1/', shop, name='shop'),
+    path('2/', shopping_cart, name='shopping_cart'),
+    path('sign_up_by_django/', sign_up_by_django, name='sign_up_by_django')
+    
+
 ]
